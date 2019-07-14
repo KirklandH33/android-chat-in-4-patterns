@@ -21,8 +21,8 @@ import nju.androidchat.client.R;
 import nju.androidchat.client.Utils;
 import nju.androidchat.client.component.ItemTextReceive;
 import nju.androidchat.client.component.ItemTextSend;
-import nju.androidchat.client.component.ItemImgReceive;
-import nju.androidchat.client.component.ItemImgSend;
+import nju.androidchat.client.component.ItemImageReceive;
+import nju.androidchat.client.component.ItemImageSend;
 import nju.androidchat.client.component.OnRecallMessageRequested;
 
 @Log
@@ -62,9 +62,9 @@ public class Mvp0TalkActivity extends AppCompatActivity implements Mvp0Contract.
                         if (text.matches(pic)) {
                             String url = text.substring(text.indexOf("https") , text.length() - 1);
                             if (message.getSenderUsername().equals(this.presenter.getUsername())) {
-                                content.addView(new ItemImgSend(this, url, message.getMessageId(), this));
+                                content.addView(new ItemImageSend(this, url, message.getMessageId(), this));
                             } else {
-                                content.addView(new ItemImgReceive(this, url, message.getMessageId()));
+                                content.addView(new ItemImageReceive(this, url, message.getMessageId()));
                             }
                         } else {
                             text = text.trim();
